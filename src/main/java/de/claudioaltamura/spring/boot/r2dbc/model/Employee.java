@@ -2,14 +2,12 @@ package de.claudioaltamura.spring.boot.r2dbc.model;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.domain.Persistable;
 import org.springframework.data.relational.core.mapping.Table;
 
 import java.time.LocalDate;
@@ -23,7 +21,7 @@ import java.util.UUID;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Employee implements Persistable<UUID> {
+public class Employee {
 
     @Id
     @JsonProperty("uuid")
@@ -45,11 +43,5 @@ public class Employee implements Persistable<UUID> {
 
     @NotNull
     private UUID department;
-
-    @Override
-    @JsonIgnore
-    public boolean isNew() {
-        return true;
-    }
 
 }

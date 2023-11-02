@@ -16,6 +16,8 @@ import java.util.UUID;
 @Table("department")
 @Getter
 @Setter
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@ToString(onlyExplicitlyIncluded = true)
 @AllArgsConstructor
 @NoArgsConstructor
 public class Department implements Persistable<UUID> {
@@ -23,6 +25,8 @@ public class Department implements Persistable<UUID> {
     @Id
     @JsonProperty("uuid")
     @JsonAlias("id")
+    @EqualsAndHashCode.Include
+    @ToString.Include
     private UUID id;
 
     @NotNull

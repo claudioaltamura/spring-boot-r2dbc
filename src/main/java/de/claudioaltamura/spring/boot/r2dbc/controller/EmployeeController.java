@@ -1,6 +1,6 @@
 package de.claudioaltamura.spring.boot.r2dbc.controller;
 
-import de.claudioaltamura.spring.boot.r2dbc.entity.Employee;
+import de.claudioaltamura.spring.boot.r2dbc.model.Employee;
 import de.claudioaltamura.spring.boot.r2dbc.repository.EmployeeRepository;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

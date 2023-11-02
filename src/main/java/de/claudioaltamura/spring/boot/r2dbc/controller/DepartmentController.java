@@ -1,6 +1,6 @@
 package de.claudioaltamura.spring.boot.r2dbc.controller;
 
-import de.claudioaltamura.spring.boot.r2dbc.entity.Department;
+import de.claudioaltamura.spring.boot.r2dbc.model.Department;
 import de.claudioaltamura.spring.boot.r2dbc.repository.DepartmentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

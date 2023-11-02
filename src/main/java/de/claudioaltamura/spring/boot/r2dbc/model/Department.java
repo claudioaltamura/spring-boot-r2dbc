@@ -1,4 +1,4 @@
-package de.claudioaltamura.spring.boot.r2dbc.entity;
+package de.claudioaltamura.spring.boot.r2dbc.model;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnore;

@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=app
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_DB=employees
+    ports:
+      - 5432:5432
+    volumes:
+      -  employees-db:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer
+    ports:
+      - 18080:8080
+
+volumes:
+  employees-db:

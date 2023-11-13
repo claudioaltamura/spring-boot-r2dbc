@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "62eef7c9-1818-47c3-8dbd-6f331df565da",
+		"name": "EmployeesApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17634286"
+	},
+	"item": [
+		{
+			"name": "get departments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}:{{port}}/departments",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"departments"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "all departments",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{port}}/departments",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"departments"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "133"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"name\": \"Finance\",\n        \"uuid\": \"5ac4aa02-f463-431b-bd99-6190e40230e6\"\n    },\n    {\n        \"name\": \"Marketing\",\n        \"uuid\": \"eead45b1-4a07-4c8b-94d8-8a732053c4ce\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "get employees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}:{{port}}/employees",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"employees"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "all employees",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{port}}/employees",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "495"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"firstName\": \"John\",\n        \"lastName\": \"Doe\",\n        \"dateOfBirth\": \"1970-01-01\",\n        \"department\": \"5ac4aa02-f463-431b-bd99-6190e40230e6\",\n        \"uuid\": \"666023f4-c606-4ac9-a407-be1ce0571a8e\"\n    },\n    {\n        \"firstName\": \"Jane\",\n        \"lastName\": \"Smith\",\n        \"dateOfBirth\": \"1980-02-01\",\n        \"department\": \"eead45b1-4a07-4c8b-94d8-8a732053c4ce\",\n        \"uuid\": \"0ccc0127-bd4d-4234-bdbd-6cead658bac0\"\n    },\n    {\n        \"firstName\": \"Alex\",\n        \"lastName\": \"Miller\",\n        \"dateOfBirth\": \"1990-03-01\",\n        \"department\": \"5ac4aa02-f463-431b-bd99-6190e40230e6\",\n        \"uuid\": \"90f5dcce-caef-4fc8-bfe8-9e0df1f10237\"\n    }\n]"
+				}
+			]
+		}
+	]
+}

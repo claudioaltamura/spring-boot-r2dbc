@@ -24,13 +24,13 @@ public class EmployeeController {
     public Mono<ResponseEntity<List<Employee>>> getEmployees() {
         return employeeRepository.findAll()
                 .collectList()
-                .map(employees -> new ResponseEntity(employees, HttpStatus.OK));
+                .map(employees -> new ResponseEntity<>(employees, HttpStatus.OK));
     }
 
     @PostMapping(path = "/employees")
     public Mono<ResponseEntity<Employee>> createEmployee(@RequestBody @Valid Mono<Employee> newEmployee) {
         return newEmployee.flatMap(employeeRepository::save)
-                .map(employee -> new ResponseEntity(employee, HttpStatus.CREATED));
+                .map(employee -> new ResponseEntity<>(employee, HttpStatus.CREATED));
     }
 
 }

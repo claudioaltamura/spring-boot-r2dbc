@@ -15,3 +15,7 @@ spring:
 r2dbc:
   url: r2dbc:h2:mem://./employees
 
+logging:
+  level:
+    io.r2dbc.postgresql.QUERY: DEBUG # for queries
+    io.r2dbc.postgresql.PARAM: DEBUG # for parameters

@@ -6,10 +6,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 
 import java.util.List;
@@ -23,6 +20,13 @@ public class EmployeeController {
     @GetMapping(path = "/employees")
     public Mono<ResponseEntity<List<Employee>>> getEmployees() {
         return employeeRepository.findAll()
+                .collectList()
+                .map(employees -> new ResponseEntity<>(employees, HttpStatus.OK));
+    }
+
+    @GetMapping(path = "/employees/search")
+    public Mono<ResponseEntity<List<Employee>>> findByName(@RequestParam String name) {
+        return employeeRepository.findByName(name)
                 .collectList()
                 .map(employees -> new ResponseEntity<>(employees, HttpStatus.OK));
     }

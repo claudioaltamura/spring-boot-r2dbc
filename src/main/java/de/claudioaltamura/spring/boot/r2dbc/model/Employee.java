@@ -5,13 +5,11 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import lombok.*;
-
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Table;
-
 import java.time.LocalDate;
 import java.util.UUID;
+import lombok.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
 @Table("employee")
 @Getter
@@ -23,25 +21,23 @@ import java.util.UUID;
 @NoArgsConstructor
 public class Employee {
 
-    @Id
-    @JsonProperty("uuid")
-    @JsonAlias("id")
-    @EqualsAndHashCode.Include
-    @ToString.Include
-    private UUID id;
+  @Id
+  @JsonProperty("uuid")
+  @JsonAlias("id")
+  @EqualsAndHashCode.Include
+  @ToString.Include
+  private UUID id;
 
-    @NotNull
-    @Size(max = 64, message = "The property 'firstName' must be less than or equal to 64 characters.")
-    private String firstName;
+  @NotNull
+  @Size(max = 64, message = "The property 'firstName' must be less than or equal to 64 characters.")
+  private String firstName;
 
-    @NotNull
-    @Size(max = 64, message = "The property 'lastName' must be less than or equal to 64 characters.")
-    private String lastName;
+  @NotNull
+  @Size(max = 64, message = "The property 'lastName' must be less than or equal to 64 characters.")
+  private String lastName;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-    private LocalDate dateOfBirth;
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+  private LocalDate dateOfBirth;
 
-    @NotNull
-    private UUID department;
-
+  @NotNull private UUID department;
 }
